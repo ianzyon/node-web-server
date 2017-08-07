@@ -69,12 +69,23 @@ app.get('/about',
 );
 app.get('/bad', 
 (req,res) => {
-    res.send({
+    res.send({ 
         errorMessage: 'Unable to fetch for request!',
         status: 'NO_GOOD'
     })
 }
 );
+// projects page
+app.get('/projects', 
+(req,res) => {
+    res.render('projects.hbs',{
+        pageTitle: 'My Projects',
+        bodyContent: 'In this page i show my ongoing projects.',
+    });
+}
+);
+
+
 // listen gera um server de http na porta informada
 app.listen(port,
     () =>{
